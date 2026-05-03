@@ -10,15 +10,28 @@ Python 3.10+ ve `mcp` kütüphanesi gereklidir.
 pip install mcp
 ```
 
-### 2. IDE Entegrasyonu
+### 2. IDE Entegrasyonu ve .json Yapılandırması
 
-#### 🤖 Cursor / Claude Desktop / Antigravity
-Aşağıdaki komutu IDE'nizin MCP ayarları kısmına ekleyin:
+MCP sunucusunu kullanmak için IDE'nizin (Cursor, Claude Desktop vb.) yapılandırma dosyasına (`mcp_config.json`) aşağıdaki bloğu eklemeniz gerekir.
 
-**Komut (Command):**
-```bash
-python c:\Users\user\Desktop\Daisyui-mcp\daisyui_mcp.py
+#### 📝 mcp_config.json Örneği
+
+```json
+{
+  "mcpServers": {
+    "daisyui-expert": {
+      "command": "python",
+      "args": [
+        "c:/Users/user/Desktop/Daisyui-mcp/daisyui_mcp.py"
+      ],
+      "env": {}
+    }
+  }
+}
 ```
+
+> [!TIP]
+> **Dosya Yolu:** Yukarıdaki `"args"` kısmındaki `c:/Users/user/Desktop/Daisyui-mcp/daisyui_mcp.py` yolunun, dosyanın bilgisayarınızdaki gerçek yolu olduğundan emin olun. Ters eğik çizgi (`\`) yerine düz eğik çizgi (`/`) kullanmak Windows üzerinde daha güvenlidir.
 
 ---
 
